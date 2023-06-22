@@ -1,1 +1,6 @@
-<p>dash works!</p>
+<ng-template *ngIf="loading == true; else dash">
+  <app-preloader-lego></app-preloader-lego>
+</ng-template>
+<ng-template #dash>
+  <p>dash here</p>
+</ng-template>

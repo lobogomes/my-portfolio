@@ -7,7 +7,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class WelcomeComponent implements OnInit {
 
-  hideButton = false;
+  hideButton = true;
   typedText = '';
   finalText = 'hello world ! ' +
     'welcome to ~my~ world. here, you will find out my favorites things about ' +
