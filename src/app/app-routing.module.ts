@@ -4,6 +4,7 @@ import {WelcomeComponent} from "./core/components/welcome/welcome.component";
 import {DashComponent} from "./core/components/dash/dash.component";
 import {BrowserModule} from "@angular/platform-browser";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {RainbowPreloaderComponent} from "./shared/components/rainbow-preloader/rainbow-preloader.component";
 
 const routes: Routes = [
   {

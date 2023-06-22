@@ -1,5 +1,6 @@
-<ng-template *ngIf="loading == true; else dash">
-</ng-template>
+<div *ngIf="loading; else dash">
+  <app-rainbow-preloader></app-rainbow-preloader>
+</div>
 <ng-template #dash>
   <p>dash here</p>
 </ng-template>

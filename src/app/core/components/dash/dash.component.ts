@@ -11,7 +11,7 @@ export class DashComponent implements OnInit{
   ngOnInit(): void {
     setTimeout( () => {
       this.loading = false;
-    }, 8000)
+    }, 100000)
   }
 
 
