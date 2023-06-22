@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+/** root css **/
+html,
+body,
+app-root{
+  height: 100%;
+  margin: 0!important;
+}
+
+body {
+  background-color: #e0e0e0;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.no-v-scroll {
+  height: 100%;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+
