@@ -1,18 +1,18 @@
 @use "sass:math";
 
-$rainbow : (
-  red : rgba(241,90,90,1),
-  yellow : rgba(240,196,25,1),
-  green : rgba(78,186,111,1),
-  blue : rgba(45,149,191,1),
-  purple : rgba(149,91,165,1),
+$rainbow: (
+  red : rgba(241, 90, 90, 1),
+  yellow : rgba(240, 196, 25, 1),
+  green : rgba(78, 186, 111, 1),
+  blue : rgba(45, 149, 191, 1),
+  purple : rgba(149, 91, 165, 1),
 );
-$i : 1;
-$borderWidth : 12px;
-$dimension : 60px;
-$offset : $dimension - $borderWidth;
-$clip : $dimension + ($borderWidth *2);
-$z : length($rainbow);
+$i: 1;
+$borderWidth: 12px;
+$dimension: 60px;
+$offset: $dimension - $borderWidth;
+$clip: $dimension + ($borderWidth *2);
+$z: length($rainbow);
 
 @each $color, $value in $rainbow {
   .rainbow-preloader .rainbow-stripe:nth-child(#{$i}) {
@@ -29,7 +29,7 @@ $z : length($rainbow);
     animation: rainbow-in-out length($rainbow)+s #{math.div($i, length($rainbow)*2)}s infinite;
 
     &:before {
-      border:($borderWidth*0.25) solid darken($value, 10%);
+      border: ($borderWidth*0.25) solid darken($value, 10%);
       content: '';
       display: block;
       height: $dimension - $borderWidth;
@@ -37,10 +37,10 @@ $z : length($rainbow);
     }
   }
 
-  $i : $i + 1;
-  $dimension : $dimension + ($borderWidth * 2);
-  $offset : $offset - $borderWidth;
-  $clip : $dimension + ($borderWidth *2);
+  $i: $i + 1;
+  $dimension: $dimension + ($borderWidth * 2);
+  $offset: $offset - $borderWidth;
+  $clip: $dimension + ($borderWidth *2);
   $z: $z - 1;
 }
 
@@ -52,27 +52,27 @@ $z : length($rainbow);
   margin-top: 0 - $dimension * 0.5;
   overflow: hidden;
   position: absolute;
-  top:50%;
+  top: 50%;
   width: $dimension;
 
   &:before,
   &:after {
-    $color:pink;
+    $color: skyblue;
     background: linear-gradient(45deg, transparent 33.333%, $color 33.333%, $color 66.667%, transparent 66.667%), linear-gradient(-45deg, transparent 33.333%, $color 33.333%, $color 66.667%, transparent 66.667%);
     background-size: 6px 34px;
-    bottom:0;
+    bottom: 0;
     content: '';
     display: block;
     height: 12px;
-    left:0;
-    position:absolute;
+    left: 0;
+    position: absolute;
     width: length($rainbow) * $borderWidth + ($borderWidth*0.5);
-    z-index : length($rainbow) *2;
+    z-index: length($rainbow) *2;
   }
 
   &:after {
-    left:auto;
-    right:0;
+    left: auto;
+    right: 0;
   }
 
   .rainbow-stripe {
@@ -87,38 +87,40 @@ $z : length($rainbow);
   }
 
   .shadow {
-    background:rgba(0,0,0,0.2);
-    bottom:-1px;
-    box-shadow:0 0 10px 1px rgba(0,0,0,0.5);
-    height:2px;
-    left:0;
-    opacity:0;
-    position:absolute;
-    width:0;
+    background: rgba(0, 0, 0, 0.2);
+    bottom: -1px;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.5);
+    height: 2px;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    width: 0;
     -webkit-animation: shadow-in-out 5s infinite;
     animation: shadow-in-out 5s infinite;
+
     + .shadow {
-      left:118px;
-      -webkit-animation-delay:0.5s;
+      left: 118px;
+      -webkit-animation-delay: 0.5s;
       animation-delay: 0.5s;
     }
   }
 }
 
 body {
-  overflow-x:hidden;
+  overflow-x: hidden;
 }
+
 .sky {
-  background: pink;
+  background: skyblue;
   height: 100%;
   overflow: hidden;
   position: absolute;
   width: 100%;
 
   .cloud {
-    background: rgb(235,245,252);
+    background: rgb(235, 245, 252);
     border-radius: 200px;
-    box-shadow:0 1px 1px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
     height: 39px;
     margin-right: -102px;
     position: absolute;
@@ -128,18 +130,18 @@ body {
     $j: 0;
     @for $i from 1 to 6 {
       &.variant-#{$i} {
-        top:random(80) * 1%;
-        -webkit-transform:scale(0.2*$i);
+        top: random(80) * 1%;
+        -webkit-transform: scale(0.2*$i);
         transform: scale(0.2*$i);
-        -webkit-animation:clouds-in-out 15+$i+s ($j*2)+s infinite linear;
+        -webkit-animation: clouds-in-out 15+$i+s ($j*2)+s infinite linear;
         animation: clouds-in-out 15+$i+s ($j*2)+s infinite linear;
       }
-      $j : $j + 1;
+      $j: $j + 1;
     }
 
     &:before,
     &:after {
-      background: rgb(235,245,252);
+      background: rgb(235, 245, 252);
       border-radius: 100px;
       content: '';
       height: 45px;
@@ -162,7 +164,7 @@ body {
   }
 }
 
-.text-load{
+.text-load {
   place-items: center;
   display: grid;
   height: 100%;
@@ -171,21 +173,45 @@ body {
 }
 
 @keyframes rainbow-in-out {
-  0% {-webkit-transform : rotate(180deg);}
-  33% {-webkit-transform : rotate(360deg);}
-  66% {-webkit-transform : rotate(360deg);}
-  100% {-webkit-transform : rotate(540deg);}
+  0% {
+    -webkit-transform: rotate(180deg);
+  }
+  33% {
+    -webkit-transform: rotate(360deg);
+  }
+  66% {
+    -webkit-transform: rotate(360deg);
+  }
+  100% {
+    -webkit-transform: rotate(540deg);
+  }
 }
 
 @keyframes shadow-in-out {
-  0% { opacity: 0; width:0;}
-  33% { opacity: 1; width:length($rainbow) * $borderWidth;}
-  66% { opacity: 1; width:length($rainbow) * $borderWidth;}
-  100% { opacity: 0; width:0;}
+  0% {
+    opacity: 0;
+    width: 0;
+  }
+  33% {
+    opacity: 1;
+    width: length($rainbow) * $borderWidth;
+  }
+  66% {
+    opacity: 1;
+    width: length($rainbow) * $borderWidth;
+  }
+  100% {
+    opacity: 0;
+    width: 0;
+  }
 }
 
 @keyframes clouds-in-out {
-  0% {right:0;}
-  100% {right:105%;}
+  0% {
+    right: 0;
+  }
+  100% {
+    right: 105%;
+  }
 }
 

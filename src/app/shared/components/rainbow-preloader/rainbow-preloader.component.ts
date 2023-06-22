@@ -7,9 +7,11 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 })
 export class RainbowPreloaderComponent implements OnInit {
 
-  @ViewChild('sky') sky: any;
-  @ViewChild('rainbow') rainbow: any;
+  loading: boolean = false;
 
   ngOnInit() {
+    setTimeout(() => {
+      this.loading = true
+    }, 1500)
   }
 }

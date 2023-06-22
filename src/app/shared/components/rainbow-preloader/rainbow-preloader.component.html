@@ -4,12 +4,12 @@
   <div class="cloud variant-3"></div>
   <div class="cloud variant-4"></div>
   <div class="cloud variant-5"></div>
-<div class="rainbow-preloader" #rainbow>
-  <div class="rainbow-stripe"></div>
-  <div class="rainbow-stripe"></div>
-  <div class="rainbow-stripe"></div>
-  <div class="rainbow-stripe"></div>
-  <div class="rainbow-stripe"></div>
-</div>
-  <p class="text-load">loading...</p>
+  <div class="rainbow-preloader" *ngIf="loading">
+    <div class="rainbow-stripe"></div>
+    <div class="rainbow-stripe"></div>
+    <div class="rainbow-stripe"></div>
+    <div class="rainbow-stripe"></div>
+    <div class="rainbow-stripe"></div>
+  </div>
+  <p class="text-load" *ngIf="loading">loading...</p>
 </div>
