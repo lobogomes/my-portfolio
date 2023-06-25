@@ -1,0 +1,200 @@
+@use "src/colors.scss" as colors;
+
+.container-center-column {
+  gap: 20px;
+}
+
+.title {
+  font-weight: bold;
+  letter-spacing: 3px;
+  font-size: 14px;
+
+  span {
+    color: colors.$red;
+  }
+}
+
+.child-container {
+  height: 70%;
+  width: 100%;
+}
+
+.header-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* start light bulb css */
+
+.bulb-container {
+  font-size: 1rem;
+  perspective: 800px;
+  position: absolute;
+  z-index: 20;
+  padding-top: 0.5em;
+  margin-bottom: 0.5em;
+  top: 0;
+  right: 20px;
+}
+
+.bulb-container::after {
+  content: "";
+  width: 1.125em;
+  height: 0.5em;
+  background: url(//www.w3cplus.com/sites/default/files/blogs/2020/2002/bulb-top.png);
+  background-size: 100% 100%;
+  position: absolute;
+  left: calc(50% - 0.5625em);
+  top: 0;
+}
+
+.bulb {
+  font-size: 1rem;
+  width: 3.375em;
+  height: 11.5em;
+  margin: 0 auto;
+  transform-origin: center top;
+  animation: swing 3s ease-in-out infinite alternate;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease-out;
+  cursor: pointer;
+  display: block;
+  background: none;
+  border: none;
+  -webkit-appearance: none;
+  padding: 0;
+}
+
+.bulb:focus {
+  outline-offset: 1rem;
+  outline: none;
+}
+
+.bulb:hover .bulb-img img, .bulb:focus .bulb-img img, .bulb:active .bulb-img img {
+  outline: none;
+  animation: flicker 2s linear infinite alternate;
+}
+
+.bulb:hover .bulb-img::before, .bulb:focus .bulb-img::before, .bulb:active .bulb-img::before {
+  outline: none;
+  animation: flicker-light 2s linear infinite alternate;
+}
+
+.bulb-img {
+  outline: none;
+  transform-style: preserve-3d;
+  display: block;
+  transform-origin: center top;
+  animation: scale 2.5s -1.5s ease-in-out infinite alternate;
+  position: relative;
+}
+
+.bulb-img::before {
+  content: "";
+  position: absolute;
+  left: calc(50% - 1px);
+  bottom: 0;
+  width: 0.625em;
+  height: 0.625em;
+  background: transparent;
+  border-radius: 50%;
+  z-index: -1;
+  box-shadow: 0 0 6.375em 4em var(--light);
+  opacity: 0.6;
+  transform: scaleY(0.7) translateY(-1em) translateX(0.4em);
+  transform-origin: center top;
+}
+
+.bulb-img img {
+  display: block;
+  filter: saturate(var(--saturation));
+  width: 3.375em;
+}
+
+@keyframes swing {
+  0% {
+    transform: rotate(4deg);
+  }
+
+  100% {
+    transform: rotate(-4deg);
+  }
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(0.98);
+  }
+
+  100% {
+    transform: scale(1.02);
+  }
+}
+
+@keyframes flicker {
+  0%,
+  4%,
+  8%,
+  12%,
+  20%,
+  30%,
+  40%,
+  50%,
+  100% {
+    filter: saturate(0);
+  }
+
+  2%,
+  6%,
+  10% {
+    filter: saturate(1.4);
+  }
+
+  25%,
+  35%,
+  45% {
+    filter: saturate(1.6);
+  }
+
+  80% {
+    filter: saturate(3);
+  }
+}
+
+@keyframes flicker-light {
+  0%,
+  4%,
+  8%,
+  12%,
+  20%,
+  30%,
+  40%,
+  50%,
+  100% {
+    filter: saturate(0);
+    opacity: 0.5;
+  }
+
+  2%,
+  6%,
+  10% {
+    filter: saturate(1.4);
+    opacity: 0.6;
+  }
+
+  25%,
+  35%,
+  45% {
+    filter: saturate(1.6);
+    opacity: 0.6;
+  }
+
+  80% {
+    filter: saturate(3);
+    opacity: 0.7;
+  }
+}
+
+/* end light bulb css */
