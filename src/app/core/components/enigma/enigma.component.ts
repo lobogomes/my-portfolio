@@ -9,7 +9,6 @@ export class EnigmaComponent implements OnInit {
 
   darkmode: boolean = true;
   ngOnInit() {
-    this.darkmode = localStorage.getItem('darkmode') === 'true';
     this.applyTheme()
   }
 
@@ -21,10 +20,8 @@ export class EnigmaComponent implements OnInit {
   applyTheme() {
     if(this.darkmode){
       document.body.classList.add('dark-theme')
-      localStorage.setItem('darkmode', 'true')
     }else{
       document.body.classList.remove('dark-theme')
-      localStorage.setItem('darkmode', 'false')
     }
   }
 

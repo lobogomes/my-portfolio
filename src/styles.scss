@@ -1,4 +1,7 @@
+@use 'src/colors' as colors;
+
 /** root css **/
+
 html,
 body,
 app-root{
@@ -44,6 +47,16 @@ body {
   font-family: "Questrial", sans-serif;
   font-size: 24px;
   font-weight: bold;
+}
+
+.enigma-warning{
+  font-family: "Questrial", sans-serif;
+  font-size: 18px;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .enigma-answer{

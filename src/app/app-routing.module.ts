@@ -11,6 +11,7 @@ import {TwoComponent} from "./core/components/enigma/two/two.component";
 import {ThreeComponent} from "./core/components/enigma/three/three.component";
 import {FourComponent} from "./core/components/enigma/four/four.component";
 import {FinalComponent} from "./core/components/enigma/final/final.component";
+import {canActivate} from "./shared/guards/enigma.guard";
 
 const routes: Routes = [
   {
@@ -33,20 +34,24 @@ const routes: Routes = [
         component: OneComponent
       },
       {
-        path: "two",
-        component: TwoComponent
+        path: "0",
+        component: TwoComponent,
+        canActivate: [canActivate]
       },
       {
-        path: "three",
-        component: ThreeComponent
+        path: "1",
+        component: ThreeComponent,
+        canActivate: [canActivate]
       },
       {
-        path: "four",
-        component: FourComponent
+        path: "2",
+        component: FourComponent,
+        canActivate: [canActivate]
       },
       {
-        path: "final",
-        component: FinalComponent
+        path: "3",
+        component: FinalComponent,
+        canActivate: [canActivate]
       },
 
     ]

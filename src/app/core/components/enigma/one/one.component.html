@@ -18,7 +18,8 @@
       </span>
     </button>
   </form>
-  <div *ngIf="f['answer'].hasError('invalid')">
-    wrong :(
+  <div class="enigma-warning">
+    <p *ngIf="f['answer'].hasError('invalid')">wrong :(</p>
+    <p *ngIf="f['answer'].hasError('invalid') && count >= 3">maybe you can try to ~fill~ the cup with coffee!</p>
   </div>
 </div>

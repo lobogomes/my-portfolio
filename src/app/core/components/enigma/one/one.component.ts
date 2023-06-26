@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {ActivatedRoute, Router} from "@angular/router";
+import {EnigmaService} from "../../../../shared/services/enigma.service";
 
 @Component({
   selector: 'app-one',
@@ -8,11 +10,15 @@ import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from "
 })
 export class OneComponent implements OnInit {
 
+  count = 0;
+
   form: FormGroup = new FormGroup({
     answer: new FormControl('')
   })
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder,
+              private router: Router,
+              private enigmaService: EnigmaService) {
   }
 
   ngOnInit() {
@@ -30,12 +36,17 @@ export class OneComponent implements OnInit {
   }
 
   next(){
-    console.log(this.form)
     if (this.f['answer'].value.toLowerCase() === 'java'){
-      console.log("correct")
+
+      this.enigmaService.answerQuestion(0, true);
+
+      this.router.navigate(['/enigma', 0]).then(r  => {
+        console.log("to the next enigma...")
+      });
+
     }else{
+      this.count++;
       this.f['answer'].setErrors({'invalid': true})
     }
-    console.log(this.f['answer'])
   }
 }
