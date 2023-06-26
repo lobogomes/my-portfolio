@@ -1,8 +1,15 @@
 <div class="container-center-column">
-  <div class="enigma-question">maybe you wanna try something</div>
-  <div class="enigma-answer">
-    <input class="enigma-input" type="text" />
-    <button class="enigma-button">
+  <div class="coffee-container">
+    <div class="cup">
+      <div class="filling reset" (click)="fillCoffee()">
+      </div>
+      <div class="plate"></div>
+    </div>
+  </div>
+  <div class="enigma-question">what is the best coffee of the world?</div>
+  <form [formGroup]="form" class="enigma-answer">
+    <input class="enigma-input" type="text" formControlName="answer"/>
+    <button class="enigma-button" (click)="next()">
       <span class="circle" aria-hidden="true">
         <span class="icon arrow"></span>
       </span>
@@ -10,5 +17,8 @@
         are you sure?
       </span>
     </button>
+  </form>
+  <div *ngIf="f['answer'].hasError('invalid')">
+    wrong :(
   </div>
 </div>

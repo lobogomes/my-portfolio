@@ -10,6 +10,7 @@ import { TwoComponent } from './components/enigma/two/two.component';
 import { ThreeComponent } from './components/enigma/three/three.component';
 import { FourComponent } from './components/enigma/four/four.component';
 import { FinalComponent } from './components/enigma/final/final.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { FinalComponent } from './components/enigma/final/final.component';
     RouterLink,
     SharedModule,
     RouterOutlet,
+    ReactiveFormsModule,
   ],
   exports: [
     WelcomeComponent,

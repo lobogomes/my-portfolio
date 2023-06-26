@@ -28,6 +28,7 @@ body {
   color: white;
   .enigma-input{
     border-bottom: 1px solid white;
+    color: white;
   }
 }
 
@@ -62,6 +63,7 @@ body {
   background-color: transparent;
   border: none;
   border-bottom: 1px solid black;
+  color: black;
 }
 .enigma-input:focus, .enigma-input:hover, .enigma-input:active, .enigma-input:focus-visible{
   outline: none!important;

@@ -1,3 +1,82 @@
 .container-center-column{
   gap: 70px;
 }
+
+.coffee-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cup{
+  width: 70px;
+  height: 60px;
+  border-radius: 0 0 35px 35px;
+  position: relative;
+  background-color: #d6b9a4;
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+.cup::after{
+  content: "";
+  position: absolute;
+  top: 10%;
+  left: calc(100% - 1px);
+  width: 10px;
+  border: 5px solid #d6b9a4;
+  height: 20px;
+  border-radius: 50% 30%;
+}
+
+.plate{
+  position: absolute;
+  width: 40px;
+  background-color: #d6b9a4;
+  height: 7px;
+  border-radius: 15px;
+  top: 110%;
+  left: 15px;
+}
+
+.filling {
+  position: absolute;
+  left: 5px;
+  width: 60px;
+  height: 50px;
+  overflow: hidden;
+  border-radius: 0 0 35px 35px;
+  background-color: transparent;
+  bottom: 5px;
+}
+
+.filling .coffee {
+  position: absolute;
+  width: 100%;
+  transition: all 1s linear;
+  color: #d6b9a4;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: hidden;
+  font-size: 14px;
+  height: 100%;
+  bottom: -100%;
+  box-sizing: border-box;
+}
+
+.coffee {
+  transition: all 1s linear;
+  background: #391e09;
+  line-height: 4px;
+  z-index: 7;
+  display: grid;
+  place-items: center;
+}
+
+.coffee::after{
+  content: "java";
+  text-align: center;
+  color: #d6b9a4;
+}
