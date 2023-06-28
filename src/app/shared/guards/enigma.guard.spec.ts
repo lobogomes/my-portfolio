@@ -1,11 +1,11 @@
 import { TestBed } from '@angular/core/testing';
 import { CanActivateFn } from '@angular/router';
+import {canActivate} from "./enigma.guard";
 
-import { enigmaGuard } from './enigma.guard';
 
 describe('enigmaGuard', () => {
-  const executeGuard: CanActivateFn = (...guardParameters) => 
-      TestBed.runInInjectionContext(() => enigmaGuard(...guardParameters));
+  const executeGuard: CanActivateFn = (...guardParameters) =>
+      TestBed.runInInjectionContext(() => canActivate(...guardParameters));
 
   beforeEach(() => {
     TestBed.configureTestingModule({});

@@ -1,1 +1,36 @@
-<p>four works!</p>
+<div class="fibonacci-wrapper">
+  <div class="fibonacci-squares">
+    <div class="square-1 square">
+      <div class="square-2 square">
+        <div class="square-3 square">
+          <div class="square-4 square">
+            <div class="square-5 square">
+              <div class="square-6 square">
+                <div class="square-7 square">
+                  <div class="square-8 square"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-center-column">
+  <form [formGroup]="form" class="enigma-answer">
+    <input class="enigma-input" type="text" formControlName="answer"/>
+    <button class="enigma-button" (click)="next()">
+      <span class="circle" aria-hidden="true">
+        <span class="icon arrow"></span>
+      </span>
+      <span class="button-text">
+        are you sure?
+      </span>
+    </button>
+  </form>
+  <div class="enigma-warning">
+    <p *ngIf="f['answer'].hasError('invalid')">wrong :(</p>
+    <p *ngIf="f['answer'].hasError('invalid') && count >= 3">0 1 1 2 3 5 8 13 21 34...</p>
+  </div>
+</div>

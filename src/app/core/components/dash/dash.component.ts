@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Route, Router} from "@angular/router";
 
 @Component({
   selector: 'app-dash',
@@ -8,11 +9,17 @@ import {Component, OnInit} from '@angular/core';
 export class DashComponent implements OnInit{
   loading: boolean = true;
 
+  constructor(private router: Router) {
+
+  }
+
   ngOnInit(): void {
     setTimeout( () => {
       this.loading = false;
-    }, 10000)
+    }, 3000)
   }
 
-
+  goTo(){
+    this.router.navigate(['enigma']);
+  }
 }

@@ -1,1 +1,147 @@
-<p>three works!</p>
+<div class="all-wrap">
+  <div class="all">
+    <div class="yarn"></div>
+    <div class="cat-wrap">
+      <div class="cat">
+        <div class="cat-upper">
+          <div class="cat-leg"></div>
+          <div class="cat-leg"></div>
+          <div class="cat-head">
+            <div class="cat-ears">
+              <div class="cat-ear"></div>
+              <div class="cat-ear"></div>
+            </div>
+            <div class="cat-face">
+              <div class="cat-eyes"></div>
+              <div class="cat-mouth"></div>
+              <div class="cat-whiskers"></div>
+            </div>
+          </div>
+        </div>
+        <div class="cat-lower-wrap">
+          <div class="cat-lower">
+            <div class="cat-leg">
+              <div class="cat-leg">
+                <div class="cat-leg">
+                  <div class="cat-leg">
+                    <div class="cat-leg">
+                      <div class="cat-leg">
+                        <div class="cat-leg">
+                          <div class="cat-leg">
+                            <div class="cat-leg">
+                              <div class="cat-leg">
+                                <div class="cat-leg">
+                                  <div class="cat-leg">
+                                    <div class="cat-leg">
+                                      <div class="cat-leg">
+                                        <div class="cat-leg">
+                                          <div class="cat-leg">
+                                            <div class="cat-paw"></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cat-leg">
+              <div class="cat-leg">
+                <div class="cat-leg">
+                  <div class="cat-leg">
+                    <div class="cat-leg">
+                      <div class="cat-leg">
+                        <div class="cat-leg">
+                          <div class="cat-leg">
+                            <div class="cat-leg">
+                              <div class="cat-leg">
+                                <div class="cat-leg">
+                                  <div class="cat-leg">
+                                    <div class="cat-leg">
+                                      <div class="cat-leg">
+                                        <div class="cat-leg">
+                                          <div class="cat-leg">
+                                            <div class="cat-paw"></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cat-tail">
+              <div class="cat-tail">
+                <div class="cat-tail">
+                  <div class="cat-tail">
+                    <div class="cat-tail">
+                      <div class="cat-tail">
+                        <div class="cat-tail">
+                          <div class="cat-tail">
+                            <div class="cat-tail">
+                              <div class="cat-tail">
+                                <div class="cat-tail">
+                                  <div class="cat-tail">
+                                    <div class="cat-tail">
+                                      <div class="cat-tail">
+                                        <div class="cat-tail">
+                                          <div class="cat-tail -end"></div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-center-column">
+  <div class="enigma-question">
+    <p>33.735980310085786</p>
+    <p>132.48298973325666</p>
+  </div>
+  <form [formGroup]="form" class="enigma-answer">
+    <input class="enigma-input" type="text" formControlName="answer"/>
+    <button class="enigma-button" (click)="next()">
+      <span class="circle" aria-hidden="true">
+        <span class="icon arrow"></span>
+      </span>
+      <span class="button-text">
+        are you sure?
+      </span>
+    </button>
+  </form>
+  <div class="enigma-warning">
+    <p *ngIf="f['answer'].hasError('invalid')">wrong :(</p>
+    <p *ngIf="f['answer'].hasError('invalid') && count >= 3">turn on the light...</p>
+  </div>
+</div>

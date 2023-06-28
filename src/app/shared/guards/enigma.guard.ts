@@ -1,7 +1,6 @@
 import {
   ActivatedRouteSnapshot, CanActivateChildFn,
   CanActivateFn,
-  Router,
   RouterStateSnapshot,
 } from "@angular/router";
 import {EnigmaService} from "../services/enigma.service";
@@ -12,7 +11,7 @@ export const canActivate: CanActivateFn = (
   state: RouterStateSnapshot) => {
   const enigmaService = inject(EnigmaService);
   console.log(route.routeConfig?.path)
-  const questionIndex = parseInt(route.routeConfig?.path || '', 10)
+  const questionIndex = parseInt(route.routeConfig?.path || '3', 10)
 
   return enigmaService.verifyAnswer(questionIndex)
 }

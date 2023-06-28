@@ -1,1 +1,18 @@
-<p style="color: #00FF62">two works!</p>
+<div class="container-center-column">
+  <div class="enigma-question">what's inside the box?</div>
+  <form [formGroup]="form" class="enigma-answer">
+    <input class="enigma-input" type="text" formControlName="answer"/>
+    <button class="enigma-button" (click)="next()">
+      <span class="circle" aria-hidden="true">
+        <span class="icon arrow"></span>
+      </span>
+      <span class="button-text">
+        are you sure?
+      </span>
+    </button>
+  </form>
+  <div class="enigma-warning">
+    <p *ngIf="f['answer'].hasError('invalid')">wrong :(</p>
+    <p *ngIf="f['answer'].hasError('invalid') && count >= 3">maybe you can try to hold back the click a little bit</p>
+  </div>
+</div>
