@@ -8,11 +8,87 @@
 </div>
 
 <ng-template #contact>
-  <div class="container-center-column">
-    <div class="brand-box">
-      amanda.io
+  <div class="container">
+    <div class="grid-1">
+      <div class="text-box">
+        <p>congrats!!! you won the enigma and your reward is the privilege to talk with me!</p>
+      </div>
+      <div class="popup">
+        <img class="popup-hello" ngSrc="assets/img/popup-hello.png" height="150" width="280">
+        <img class="popup-cookie" ngSrc="assets/img/popup-cookies.png" height="150" width="280">
+      </div>
+      <div class="windows">
+        <img src="https://media.giphy.com/media/CXijLuAwu955u/giphy.gif" alt="don't shut down!!" />
+      </div>
+      <div class="heart"></div>
     </div>
-    <div class="card">
+    <div class="grid-2">
+      <div class="brand-box">
+        amanda.io
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <span>call-me.exe</span>
+          <div class="buttons">
+            <div class="retro-button">
+              <button>-</button>
+            </div>
+            <div class="retro-button">
+              <button>x</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-sticks">
+            <div class="retro-button">
+              <button>x</button>
+            </div>
+            <img ngSrc="assets/img/hand.png" height="32" width="32" style="position: absolute">
+            <img ngSrc="assets/img/music.png" height="150" width="280" style="margin-right: 30px">
+          </div>
+          <div class="frame">
+            <div class="frame-info">
+              <img ngSrc="assets/img/flip-phone.png" height="48" width="48" />
+              <span>phone: +5562996266353</span>
+            </div>
+            <div class="frame-info">
+              <img ngSrc="assets/img/o-email.png" height="48" width="48" />
+              <span>e-mail: 8lobogomes@gmail.com</span>
+            </div>
+            <div class="frame-info">
+              <img ngSrc="assets/img/linkedin.png" height="48" width="48" />
+              <span>linkedin: @amandalobogomes</span>
+            </div>
+            <div class="frame-info">
+              <img ngSrc="assets/img/github.png" height="48" width="48" />
+              <span>github: @lobogomes</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <img ngSrc="assets/img/emoticons.png" height="50" width="300">
+          <div class="retro-button">
+            <button (click)="goTo()">GO HOME</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid-3">
+      <div class="dino">
+      </div>
+      <div class="windows-logo">
+        <img src="https://media.giphy.com/media/gSxj0I2b2EMCc/giphy.gif" alt="windows logo" />
+      </div>
+      <div class="text-box">
+        <p>thank you for contributing to my work and getting this far!</p>
+      </div>
+      <div class="art">
+        <img src="https://media.giphy.com/media/gzROsII7swwrm/giphy.gif"
+             alt="A glitched statue to represent where human intellect has come from and where it's going" />
+      </div>
+      <div class="computer">
+        <app-retro-pc></app-retro-pc>
+      </div>
     </div>
   </div>
 </ng-template>

@@ -1,20 +1,424 @@
 @use "src/colors" as colors;
 
-.container-center-column{
-  background-color: #ffdeeb;
+/* background css */
+
+.container-center-column {
+  background-color: #e6dcdc;
 }
 
-.brand-box{
+.container {
+  background-color: rgb(253, 203, 204);
+  background-image: linear-gradient(colors.$white 1px, transparent 1px),
+  linear-gradient(90deg, colors.$white 1px, transparent 1px),
+  linear-gradient(colors.$white 1px, transparent 1px),
+  linear-gradient(90deg, colors.$white 1px, transparent 1px);
+  background-size: 200px 200px, 200px 200px, 20px 20px, 20px 20px;
+  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+}
+
+/* cards and containers css */
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.grid-1{
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.grid-2{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid-3{
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-box {
   color: black;
 }
 
-.card{
+.card {
+  display: flex;
+  flex-direction: column;
   background-color: #fafafa;
-  border-radius: 130px;
-  width: 80%;
-  height: 70%;
-  -webkit-box-shadow: 7px 13px 118px -38px rgba(255,117,172,1);
-  -moz-box-shadow: 7px 13px 118px -38px rgba(255,117,172,1);
-  box-shadow: 7px 13px 118px -38px rgba(255,117,172,1);
+  border: 2px solid black;
+  -webkit-box-shadow: 10px 10px 0px 1px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 10px 10px 0px 1px rgba(0, 0, 0, 1);
+  box-shadow: 10px 10px 0px 1px rgba(0, 0, 0, 1);
 }
+
+.card-header {
+  width: 100%;
+  position: relative;
+  top: 0;
+  height: 40px;
+  background-color: #ecc1f4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  span{
+    margin-left: 20px;
+  }
+}
+
+.buttons{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-body{
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  .card-sticks > .retro-button{
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    background-image: url("/assets/img/anime-girl.jpg");
+    background-size: cover;
+  }
+}
+
+.card-sticks{
+  display: grid;
+  align-items: end;
+  justify-items: center;
+  margin-top: 20px;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 40px 20px 20px;
+  .retro-button > button{
+    width: 250px;
+    font-family: inherit;
+    font-size: 20px;
+  }
+}
+
+.frame{
+  border: 1px dashed black;
+  padding: 25px;
+  margin-top: 30px;
+  margin-right: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+}
+
+.frame-info{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  span{
+    font-size: 20px;
+    color: #282828;
+  }
+}
+
+.computer{
+  position: absolute;
+  bottom: 250px;
+}
+
+.text-box{
+  margin: 20px;
+  background-color: white;
+  border: 2px solid black;
+  color: black;
+  -webkit-box-shadow: 5px 5px 0 1px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 5px 5px 0 1px rgba(0, 0, 0, 1);
+  box-shadow: 5px 5px 0 1px rgba(0, 0, 0, 1);
+}
+
+.art{
+  position: absolute;
+  bottom: 120px;
+  z-index: 1;
+  right: 280px;
+  img{
+    width: 210px;
+    height: 250px;
+  }
+}
+
+.popup-hello{
+  position: absolute;
+  top: 510px;
+  left: 200px;
+  z-index: 1;
+}
+
+.popup-cookie{
+  position: absolute;
+  top: 410px;
+  left: 50px;
+}
+
+.windows{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  img{
+    width: 300px;
+  }
+}
+
+.windows-logo{
+  z-index: 1;
+  position: absolute;
+  top: 250px;
+  right: 0;
+  img{
+    width: 150px;
+  }
+}
+
+.heart {
+  position: absolute;
+  left: 300px;
+  bottom: 150px;
+  z-index: 1;
+  width: 105px;
+  height: 105px;
+  margin: -52.5px 0 0 -52.5px;
+}
+
+.heart:hover::before {
+  -webkit-animation-play-state: paused;
+  border-radius: 100%;
+  opacity: 0;
+}
+
+.heart::before {
+  content: "";
+  display: block;
+  transition: all 400ms;
+  -webkit-animation: pulse 1.2s steps(1) infinite;
+  width: 15px;
+  height: 15px;
+  margin: -15px 0 0 -15px;
+  box-shadow: 30px 15px #8e1a19, 45px 15px #ac0500, 75px 15px #f73f0c, 90px 15px #fa5f27, 15px 30px #740100, 30px 30px #8e0500, 45px 30px #8e1918, 60px 30px #ca1300, 75px 30px #f34f2b, 90px 30px #df351f, 105px 30px #f77c2a, 15px 45px #4b0000, 30px 45px #690100, 45px 45px #8e0f0b, 60px 45px #bf1000, 75px 45px #f84010, 90px 45px #f04222, 105px 45px #fa5724, 15px 60px #451312, 30px 60px #5a0100, 45px 60px #840e0c, 60px 60px #a51d1a, 75px 60px #ed2805, 90px 60px #d9321e, 105px 60px #f44622, 30px 75px #3b0000, 45px 75px #5d1a1b, 60px 75px #8e1a19, 75px 75px #a80700, 90px 75px #b90a00, 45px 90px #3d0000, 60px 90px #551415, 75px 90px #670100, 60px 105px #340000;
+}
+
+@-webkit-keyframes pulse {
+  50% {
+    -webkit-filter: blur(1.4px);
+    -webkit-transform: translate(-2px, 2px);
+  }
+}
+
+.dino {
+  margin: 0;
+  width: 9px;
+  height: 9px;
+  position: absolute;
+  right: 300px;
+  top: 400px;
+  animation: move 400ms steps(1) infinite;
+  box-shadow: 0px -9px 0 0 #535353, 9px 0 0 0 #535353, -18px 0 0 0 #535353,
+  -27px 0 0 0 #535353, -27px -9px 0 0 #535353;
+}
+.dino::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  margin: -171px 0 0 27px;
+  display: block;
+  box-shadow: 0px 18px 0 18px #535353, 10px 9px 0 18px #535353,
+  50px 14px 0 13px #535353, 44px 1px 0 10px #535353, -9px 54px 0 9px #535353,
+  -1px 89px 0 10px #535353, -4px 58px 0 13px #535353, -36px 99px 0 27px #535353,
+  -27px 54px 0 0 #535353, -36px 72px 0 9px #535353, 45px 45px 0 0 #535353,
+  36px 45px 0 0 #535353, 27px 45px 0 0 #535353, 18px 45px 0 0 #535353,
+  18px 72px 0 0 #535353, 27px 72px 0 0 #535353, 27px 81px 0 0 #535353,
+  -5px 112px 0 5px #535353, -23px 139px 0 5px #535353, -18px 153px 0 0 #535353,
+  -54px 135px 0 9px #535353, -36px 135px 0 0 #535353, -54px 153px 0 0 #535353,
+  -63px 153px 0 0 #535353, -63px 99px 0 18px #535353, -72px 126px 0 0 #535353,
+  -90px 108px 0 0 #535353, -90px 90px 0 9px #535353, -90px 90px 0 9px #535353,
+  -108px 81px 0 0 #535353, -90px 72px 0 0 #535353, -99px 72px 0 0 #535353,
+  -99px 63px 0 0 #535353, -108px 72px 0 0 #535353, -108px 63px 0 0 #535353,
+  -108px 54px 0 0 #535353, -108px 45px 0 0 #535353;
+}
+@keyframes move {
+  0%,
+  100% {
+    margin-top: 9px;
+    box-shadow: 9px -9px 0 0 #535353, 18px 0px 0 0 #535353, 27px -9px 0 0 #535353,
+    -45px 0px 0 0 #535353, -45px -18px 0 0 #535353, -54px -9px 0 0 #535353,
+    -72px -9px 0 0 #6e6e6e, -90px 0px 0 0 #6e6e6e, -99px -18px 0 0 #6e6e6e;
+  }
+  50% {
+    margin-top: 0px;
+    box-shadow: 0px -9px 0 0 #535353, 9px 0 0 0 #535353, -18px 0 0 0 #535353,
+    -27px 0 0 0 #535353, -27px -9px 0 0 #535353;
+  }
+}
+
+
+/* buttons css */
+
+.retro-button {
+  background-color: darkgrey;
+  margin: 0 20px 5px 0;
+  border-style: solid;
+  border-width: 4px;
+  border-left-color: white;
+  border-top-color: white;
+  border-bottom-color: dimgrey;
+  border-right-color: dimgrey;
+  -webkit-box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.75);
+
+  button {
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+  }
+}
+
+
+/* cat loader css */
+
+@mixin fill-full($dir: 'full', $type: absolute) {
+  position: $type;
+  @if $dir != 'bottom' {
+    top: 0;
+  }
+  @if $dir != 'right' {
+    left: 0;
+  }
+  @if $dir != 'left' {
+    right: 0;
+  }
+  @if $dir != 'top' {
+    bottom: 0;
+  }
+}
+
+.cat {
+  position: relative;
+  width: 100%;
+  max-width: 20em;
+  overflow: hidden;
+  background-color: #e6dcdc;
+
+  &::before {
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+  }
+
+  &:hover > * {
+    animation-play-state: paused;
+  }
+
+  &:active > * {
+    animation-play-state: running;
+  }
+}
+
+%cat-img {
+  @include fill-full;
+  animation: rotating 3s cubic-bezier(.65, .54, .12, .93) infinite;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background-size: 200%;
+    background-repeat: no-repeat;
+    background-image: url('https://images.weserv.nl/?url=i.imgur.com/M1raXX3.png&il');
+  }
+}
+
+.cat__head {
+  @extend %cat-img;
+
+  &::before {
+    top: 0;
+    right: 0;
+    background-position: 100% 0%;
+    transform-origin: 0% 100%;
+    transform: rotate(90deg);
+  }
+}
+
+.cat__tail {
+  @extend %cat-img;
+  animation-delay: .2s;
+
+  &::before {
+    left: 0;
+    bottom: 0;
+    background-position: 0% 100%;
+    transform-origin: 100% 0%;
+    transform: rotate(-30deg);
+  }
+}
+
+.cat__body {
+  @extend %cat-img;
+  animation-delay: .1s;
+
+  &:nth-of-type(2) {
+    animation-delay: .2s;
+  }
+
+  &::before {
+    right: 0;
+    bottom: 0;
+    background-position: 100% 100%;
+    transform-origin: 0% 0%;
+  }
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(720deg);
+  }
+  to {
+    transform: none;
+  }
+}
+
+.box {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #e6dcdc;
+}
+
 

@@ -26,7 +26,7 @@ const routes: Routes = [
   {
     path: "my-contact",
     component: MyContactComponent,
-    canActivate: [canActivate],
+    canActivate: [],
     data: {animation: 'MyContactPage'}
   },
   {

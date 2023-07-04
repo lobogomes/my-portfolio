@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-my-contact',
@@ -8,9 +9,15 @@ import {Component, OnInit} from '@angular/core';
 export class MyContactComponent implements OnInit{
   loading: boolean = true
 
+  constructor(private router: Router) {
+  }
   ngOnInit() {
     setTimeout(() => {
       this.loading = false
-    }, 1000)
+    }, 2000)
+  }
+
+  goTo(){
+    this.router.navigate(['dash']);
   }
 }

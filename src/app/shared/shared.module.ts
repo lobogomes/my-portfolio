@@ -4,12 +4,16 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {BrowserModule} from "@angular/platform-browser";
 import { RainbowPreloaderComponent } from './components/rainbow-preloader/rainbow-preloader.component';
 import { BongoCatComponent } from './components/bongo-cat/bongo-cat.component';
+import { RetroPcComponent } from './components/retro-pc/retro-pc.component';
+import { CassetteComponent } from './components/cassette/cassette.component';
 
 
 @NgModule({
   declarations: [
     RainbowPreloaderComponent,
-    BongoCatComponent
+    BongoCatComponent,
+    RetroPcComponent,
+    CassetteComponent
   ],
   imports: [
     CommonModule,
@@ -18,7 +22,9 @@ import { BongoCatComponent } from './components/bongo-cat/bongo-cat.component';
   ],
   exports: [
     RainbowPreloaderComponent,
-    BongoCatComponent
+    BongoCatComponent,
+    RetroPcComponent,
+    CassetteComponent
   ]
 })
 export class SharedModule { }

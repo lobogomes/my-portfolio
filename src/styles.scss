@@ -16,7 +16,7 @@ body {
 
 .no-v-scroll {
   height: 100%;
-  overflow-y: hidden;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   position: relative;
